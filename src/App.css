@@ -1,0 +1,205 @@
+:root {
+  --yellow: #f5c32c;
+  --orange: #fca61f;
+  /* --black: #242d49; */
+  --black:#355a62;
+  /* --black:#ffffff; */
+  
+  --gray: rgba(36, 45, 73, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: rgba(255, 255, 255, 0.64);
+  /* --buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%); */
+
+  /* fn */
+  /* --buttonBg: linear-gradient(98.63deg, #4ecaff 0%, #1e6d8b 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #ffa2ce 0%, #ff137c 100%); */
+
+  /* --buttonBg: linear-gradient(98.63deg, #62a8ff 0%, #166edc 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #ff95d2 0%, #e01566 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #ffbcca 0%, #ff2c66 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #7aceff 0%, #1ea2fc 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #bf50fd 0%, #fd507e 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #ce76ff 0%, #fd507e 100%); */
+  /* --buttonBg: linear-gradient(98.63deg, #62fee7 0%, #009bd6 100%); */
+
+  --buttonBg:#fd507e;
+  /* --buttonBg:#fe505a; */
+  --inputColor: rgba(40, 52, 62, 0.07);
+  --photo: #4CB256;
+  --video: #4A4EB7;
+  --location: #EF5757;
+--shedule: #E1AE4A;
+}
+
+.App{
+  overflow: hidden;
+  color: var(--black);
+  /* color: #355a62; */
+   /* color: white; */
+  background-color:#f3f3f3 ;
+  /* background-color: #ffd4d4; */
+
+  /* background-color: #355a62; */
+
+  /* padding:  1rem 1rem; */
+  /* height:100vh !important; */
+/* min-width: 100vw !important; */
+}
+.blur{
+position: absolute;
+
+width: 32vw;
+height: 20vw;
+border-radius: 50%;
+/* background: #a6ddf0; */
+/* background: rgb(87, 228, 209,0.5); */
+/* background: #9be3ff; */
+/* background: rgb(255, 202, 140,0.5); */
+/* background: rgb(206, 118, 255,0.5) ; */
+background-color: rgb(255, 177, 194,0.7);
+/* background-color: #e1e1e1; */
+/* background-color: #c6f5ff; */
+/* background-color: rgb(70, 156, 254,0.5); */
+/* background-color: white; */
+
+/* background-color: #6fc8db; */
+
+filter: blur(72px );  
+}
+.blurone{
+
+  top:-22%;
+  right:0;
+}
+.blurtwo{
+
+  top:30%;
+  left:-12%;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 1.2vw;
+  color: white;
+  border-radius: 0.5vw;
+  background: var(--buttonBg);
+  transition: all 100ms ease-out;
+}
+.button:hover{
+  cursor: pointer;
+  color: var(--buttonBg);
+  background: transparent;
+  border: 2px solid var(--buttonBg);
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* <style> */
+/* width */
+
+
+
+
+#error-box {
+  border: 1px solid red !important;
+}
+#success-box {
+  border: 2px solid greenyellow !important;
+}
+.err {
+  font-size: small;
+  color: red;
+ 
+}
+
+.forlinks{
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.Toastify__toast--success {
+  /* border-radius: 20px !important; */
+  /* background: var(--black) !important; */
+  background-color: black;
+
+ 
+}
+
+.Toastify__toast--error {
+  font-size: 1vw !important;
+
+  /* border-radius: 20px !important; */
+  /* background: var(--black) !important; */
+  background-color: black;
+
+
+ 
+}
+
+.react-input-emoji--input {
+  min-height: 70%;
+}
+  
+
+
+
+@media only screen and (max-width: 600px) {
+  .Toastify__toast--success {
+    /* border-radius: 10px !important; */
+
+    display: flex !important;
+    align-items: center !important;
+    height: 5vw !important;
+    font-size: 2.5vw !important;
+    left: 15% !important;
+    top: 3vw !important;
+  }
+  .Toastify__toast--error {
+    /* border-radius: 10px !important; */
+
+    display: flex !important;
+    align-items: center !important;
+    height: 5vw !important;
+    font-size: 2.5vw !important;
+    left: 15% !important;
+    top: 3vw !important;
+  }
+  .Toastify__toast {
+    --toastify-toast-min-height: 10vh;
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.blur{
+  /* width: 22rem;
+height: 14rem; */
+position: fixed;
+width: 52vw;
+height: 40vw;
+filter: blur(36px );  
+
+}
+.blurone{
+
+  top:-10%;
+  right:0;
+}
+.blurtwo{
+
+  top:60%;
+  left:-18%;
+}
+.err{
+  font-size: 2vw;
+}
+.button{
+  font-size: 2.5vw;
+  border-radius: 0.2rem;
+
+}
+}

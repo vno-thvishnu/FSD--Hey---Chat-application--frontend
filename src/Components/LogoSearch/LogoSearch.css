@@ -1,0 +1,75 @@
+.LogoSearch{
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+.LogoSearch>img{
+    width: 6vw;
+    aspect-ratio: 4/3;
+}
+.LogoSearchtwo{
+    display: flex;
+    width: 100%;
+    height: 5px;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.Search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: var(--inputColor);
+   border-radius: 10px;
+   padding: 5px;
+   width: 21vw;
+}
+.Search>input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.searchInput{
+    width: 100%;
+    height: 2vw;
+    font-size: 1vw;
+}
+/* .icons{
+    font-size: 3vw !important;
+} */
+.s-icon{
+    /* font-size: 6vw !important;
+     */
+     /* width: 8vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(106.23deg,
+    #f99827,#f95f35 100%); */
+    /* background-color:#469cfe; */
+    background-color: #fd507e;
+    border-radius: 5px;
+    padding: 0.2vw ;
+    color: white;
+}
+.s-icon:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+.LogoSearch{
+    /* justify-content: space-around; */
+    /* width: 100%; */
+}
+.LogoSearch>img{
+    display: none;
+}
+.Search{
+    width: 50vw;
+    padding: 1vw;
+    border-radius: 2vw;
+}
+.searchInput{
+    height: 4vw;
+    font-size: 3svw;
+}
+}

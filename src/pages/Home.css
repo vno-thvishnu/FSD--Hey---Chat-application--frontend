@@ -1,0 +1,120 @@
+.HomeParent{
+    padding: 0.5rem 1.5rem 1rem;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+height: 100vh !important;
+/* min-width: 100vw !important; */
+/* background-color: blueviolet; */
+/* overflow: hidden !important; */
+}
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    /* background-color: blueviolet; */
+}
+.navpair>h3{
+    color: #fd507e;
+    cursor: pointer !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 4;
+
+}
+.navpair>h3:hover{
+    color: #469cfe;
+}
+
+.Home{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30vw auto ;
+    gap:1rem ;
+    height: fit-content;
+    /* overflow: hidden; */
+    /* background-color: blue; */
+}
+
+.securityerr{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    gap: 1rem;
+    /* background-color: none; */
+}
+.securityerr>.a-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.securityerr>h2{
+    cursor: pointer;
+}
+.logohide{
+    display: none;
+}
+.navpair{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media only screen and (max-width: 600px) {
+    .logohide{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        z-index: 4;
+        position: relative;
+    }
+    .logohide>img{
+        width: 25vw;
+
+    }
+    .logohide>.Webname>h1{
+        font-size: 7vw ;
+    }
+    .logohide>.Webname>h6{
+        font-size: 2.5vw ;
+        margin-top: 0.5vw;
+    }
+.HomeParent{
+    height: fit-content !important;
+    padding: 1rem;
+    gap: 1rem;
+    /* display: none; */
+}
+.Navbar{
+    justify-content: space-between;
+    flex-direction: column;
+    height: fit-content;
+    gap: 1.5rem;
+}
+.navpair{
+    position:sticky !important;
+    top:0 !important;
+}
+.navpair>h3{
+    font-size: 2.5vw;
+    gap: 1.5vw;
+}
+.Home{
+    /* overflow: hidden; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.securityerr>h2{
+font-size: 5vw;
+}
+}
