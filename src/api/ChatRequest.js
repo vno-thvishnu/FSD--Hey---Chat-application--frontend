@@ -8,7 +8,7 @@ import axios from "axios";
 //     useContext(UserContext);
 
 
-const API = axios.create({baseURL:'http://localhost:5000'})
+const API = axios.create({baseURL:'https://hey-chat-application-backend.onrender.com'})
 
 export const login=(values)=>API.post(`/auth/login`,values)
 export const registerUser=(values)=>API.post(`/auth/register`,values)
