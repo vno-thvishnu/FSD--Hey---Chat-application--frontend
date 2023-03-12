@@ -1,12 +1,7 @@
 import axios from "axios";
-// import { useContext } from "react";
-// import { UserContext } from "../UseContext";
-// const { 
-//     loginUser
 
-//   } =
-//     useContext(UserContext);
 
+// const API = axios.create({baseURL:'http://localhost:5000'})
 
 const API = axios.create({baseURL:'https://hey-chat-application-backend.onrender.com'})
 
@@ -32,7 +27,6 @@ export const functionFollow=(id,loginUser)=>{
             "currentUserId":`${loginUser._id}`}
         API.put(`/user/${id}/unfollow`,data)}
 
-        //  const loginBy=(id)=> API.get(`/chat/${id}`)
 
 
 

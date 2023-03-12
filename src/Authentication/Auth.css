@@ -1,115 +1,56 @@
-.Auth{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    gap: 4rem;
-    position: relative;
-    /* flex-direction: column; */
-}
-/* .Webname{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-} */
-.Auth>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* gap: 1rem; */
-
+.Auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 4rem;
+  position: relative;
 }
 
-.a-left{
-    gap: 2rem;
-}
-.a-left>img{
-    width: 15vw;
-    /* height: 4rem; */
-}
-.Webname>h1{
-font-size: 3.5vw;
-/* background-color: red; */
-
-background-color: var(--buttonBg);
-
-background-size: 100%;
-background-repeat: repeat;
-
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
--moz-background-clip: text;
--moz-text-fill-color:transparent;
-}
-.Webname>h6{
-    font-size: 1vw;
+.Auth > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 
-.infoForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:2rem
+.a-left {
+  gap: 2rem;
 }
+.a-left > img {
+  width: 15vw;
+}
+.Webname > h1 {
+  font-size: 3.5vw;
 
-.infoInput{
-    border: none;
-    outline: none;
-    background-color: var(--inputColor);
-    border-radius: 8px;
-    padding: 20px;
-    flex: 1;
-}
-.infoInputPassword{
-    border: none;
-    outline: none;
-    background-color: var(--inputColor);
-    border-radius: 8px;
-    padding: 20px;
-    flex: 1;
-}
-.infoForm>div{
-    display: flex;
-    gap: 1rem;
-    height: 2rem;
-    width: 90%;
-}
-.infoButton{
-    width: 6rem;
-    height: 2rem;
-    align-self: flex-end;
-}
-.authForm{
-    background-color: var(--cardColor);
-    border-radius: 1rem;
-    padding: 1rem;
-}
-.authForm>div{
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-} */
+  background-color: var(--buttonBg);
 
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.Webname > h6 {
+  font-size: 1vw;
+}
 
 @media only screen and (max-width: 600px) {
-
-    .Auth{
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .a-left>img{
-        width: 30vw;
-        /* height: 4rem; */
-    }
-    .a-left{
-        gap: 6vw;
-    }
-    .Webname>h1{
+  .Auth {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .a-left > img {
+    width: 30vw;
+  }
+  .a-left {
+    gap: 6vw;
+  }
+  .Webname > h1 {
     font-size: 10vw;
-}
-.Webname>h6{
+  }
+  .Webname > h6 {
     font-size: 2.5vw;
-}
+  }
 }

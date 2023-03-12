@@ -1,153 +1,125 @@
-.inputbg{
-    background-color: var(--cardColor);
-    padding: 1rem;
-    border-radius: 3%;
+.inputbg {
+  background-color: var(--cardColor);
+  padding: 1rem;
+  border-radius: 3%;
 }
-.inputform{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
+.inputform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
 }
-.Inputpair{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
-}
-
-.Input{
-    border: none;
-    outline: none;
-    background-color: var(--inputColor);
-    border-radius: 8px;
-    padding: 1rem;
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
-    /* flex: 1; */
-}
-.InputBig{
-    border: none;
-    outline: none;
-    background-color: var(--inputColor);
-    border-radius: 8px;
-    padding: 1rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    /* flex: 1; */
-}
-.InputPassword{
-    border: none;
-    outline: none;
-    background-color: transparent;
-    width: 85%;
-}
-.InputPasswordSpan{
-    /* width:100%; */
-    /* background-color: aquamarine; */
-    font-size: 1vw;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    /* text-align: end; */
+.Inputpair {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.InputButton{
-    /* width: 7vw; */
-    height: 2.7vw;
-    padding: 0.4vw 1.5vw;
-    align-self: flex-end;
+.Input {
+  border: none;
+  outline: none;
+  background-color: var(--inputColor);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
 }
-.InputLink{
-    font-size: 1vw;
+.InputBig {
+  border: none;
+  outline: none;
+  background-color: var(--inputColor);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
-.doubleInput{
-    display: flex;
-    gap: 1rem;
+.InputPassword {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 85%;
 }
-/* .choose_div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-} */
-.bpad{
-    /* padding-bottom: 2rem; */
+.InputPasswordSpan {
+  font-size: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
-.choose_file{
-    /* display: block !important; */
-    /* background-color: aquamarine !important; */
-    /* opacity: 0 !important; */
-}
-.pimg{
-    width: 7vw;
-    height: 7vw;
-    object-fit: cover;
-    border-radius: 50%;
-}
-.cimg{
-    width: 12vw;
-    aspect-ratio: 5/3;
-    object-fit: cover;
 
+.InputButton {
+  height: 2.7vw;
+  padding: 0.4vw 1.5vw;
+  align-self: flex-end;
+}
+.InputLink {
+  font-size: 1vw;
+}
+.doubleInput {
+  display: flex;
+  gap: 1rem;
+}
 
+.pimg {
+  width: 7vw;
+  height: 7vw;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.cimg {
+  width: 12vw;
+  aspect-ratio: 5/3;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 600px) {
-.inputbg{
+  .inputbg {
     padding: 0.5rem;
-}
-.inputform{
+  }
+  .inputform {
     gap: 0.5rem;
-}
-.Input{
+  }
+  .Input {
     width: 70vw;
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 2.5vw;
-}
-.InputBig{
+  }
+  .InputBig {
     width: 70vw;
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 2.5vw;
-
-}
-.InputPassword{
+  }
+  .InputPassword {
     font-size: 2.5vw;
-}
-.InputPasswordSpan{
+  }
+  .InputPasswordSpan {
     font-size: 2vw;
     display: flex;
     justify-content: end;
     align-items: center;
-}
-.InputLink{
+  }
+  .InputLink {
     font-size: 2vw;
-}
-.InputButton{
+  }
+  .InputButton {
     width: 12vw;
     height: 5vw;
     align-self: flex-end;
-}
-.pimg{
+  }
+  .pimg {
     width: 20vw;
     height: 20vw;
-}
-.cimg{
+  }
+  .cimg {
     width: 32vw;
     aspect-ratio: 5/3;
-
-
-}
-
+  }
 }

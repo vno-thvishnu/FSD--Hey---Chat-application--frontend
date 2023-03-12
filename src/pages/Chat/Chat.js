@@ -2,10 +2,8 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { userChats } from '../../api/ChatRequest'
 import ChatBox from '../../Components/ChatBox/ChatBox'
 import Conversation from '../../Components/Conversation/Conversation'
-import LogoSearch from '../../Components/LogoSearch/LogoSearch'
 import './Chat.css'
 import {UilSearch} from '@iconscout/react-unicons'
-import Logo from '../../img/logo.png'
 
 
 import { io } from 'socket.io-client'
@@ -29,15 +27,13 @@ const[recieveMessage,setRecieveMessage]=useState(null)
 
 const socket=useRef()
 
-// const manualId="6400f86623e61fee2f73fe12"
-// const manualId ="6400f87223e61fee2f73fe14"
+
 
 useEffect(()=>{
     const getChats = async ()=>{
         try {
             const{data}=await userChats(loginUser._id)
             setChats(data)
-            console.log(data)
         } catch (error) {
             
         }
@@ -47,11 +43,12 @@ useEffect(()=>{
 
 
 useEffect(()=>{
-    socket.current=io('http://localhost:8800')
+    // socket.current=io('http://localhost:5000')
+    socket.current=io('https://hey-chat-application-backend.onrender.com')
+
     socket.current.emit('new-user-add',loginUser._id)
     socket.current.on('get-users',(users)=>{
         setOnlineUsers(users)
-        // console.log(onlineUsers)
     })
 },[loginUser])
 
@@ -65,22 +62,32 @@ useEffect(()=>{
 
 
 
-const[tryId,setTryId]=useState({})
+const[tryId,setTryId]=useState()
     const[tryBoolean,setTryBoolean]=useState(false)
     // const[recieveMessage,setRecieveMessage]=useState(null)
+
+
+    const openChat =(id) =>{
+        setTryId(id)
+
+        if (id !== "") {
+            chats.map((x) => { if (x._id === id) { setCurrentChat(x); setTryBoolean(true)}  })
+        }
+    }
 
 //receive message from socket server
 useEffect(()=>{
     socket.current.on("receive-message",(data)=>{
-     setTryId(data.chatId)
-     setTryBoolean(true)
+        // const dt = data.chatId
+    //  setTryId(dt)
+    //  setTryBoolean(true)
 
      setRecieveMessage(data)
-     console.log(data)
-     console.log(data.chatId)
+    //  console.log(data)
+    //  console.log(data.chatId)
     //  setTryId(recieveMessage.chatId)
 
-    openChat()
+    // openChat(dt)
 
 
     // try
@@ -90,17 +97,17 @@ useEffect(()=>{
 
 
  },[])
- console.log(recieveMessage)
+//  console.log(recieveMessage)
 //  console.log(recieveMessage.ChatId)
 
 
- function openChat() {
-        console.log(tryId)
+//  function openChat(id) {
+//         console.log(id)
 
-        if (tryId !== "") {
-            chats.map((x) => { if (x._id === tryId) { setCurrentChat(x); setTryBoolean(true)}  })
-        }
-    }
+//         if (id !== "") {
+//             chats.map((x) => { if (x._id === id) { setCurrentChat(x); setTryBoolean(true)}  })
+//         }
+//     }
 // const openChat=(chat)=>{
 //     if(tryId===""){
 //         setCurrentChat(chat)
@@ -142,31 +149,18 @@ const checkOnlineStatus=(chat)=>{
   return (
   <>
 
-  {/* <div className='LogoSearchtwo'>
-  <img src={Logo}/>
-  
-  <div className='Search'>
-            <input type="text" placeholder='#Find Buddys'/>
-            <div className='s-icon'>
-                <UilSearch/>
-            </div>
-        </div>
-  </div> */}
+
     <div className='Chat'>
         
         <div className='Left-side-chat'>
-            {/* <LogoSearch/> */}
            <div className='Chat-container'>
            <h2>Chats</h2>
         <div className='Chat-list'>
         {chats.map((chat)=>{
-// if(chat._id===tryId){
-// setTryBoolean(chat)
-// }
+
             return(
             <div 
             onClick={()=>setCurrentChat(chat)}
-// onClick={()=>{openChat(chat)}}
 >
                 <Conversation  data={chat} currentUser={loginUser._id}
                 online={checkOnlineStatus(chat)}/>
@@ -181,10 +175,10 @@ const checkOnlineStatus=(chat)=>{
         
         
         <div className='Right-side-chat'>
-        {/* <div style={{width:"20rem" , alignSelf:"flex-end"}}> */}
-        {/* <span>Hloo</span> */}
-        {/* </div> */}
-        <ChatBox tryBoolean={tryBoolean} tryId={recieveMessage} chat={currentChat} currentUser={loginUser._id}
+     
+        <ChatBox 
+        // tryBoolean={tryBoolean} tryId={recieveMessage}
+         chat={currentChat} currentUser={loginUser._id}
          setSendMessage={setSendMessage}
          recieveMessage={recieveMessage}/>
         </div>

@@ -1,24 +1,13 @@
 import React, { useContext } from "react";
 import { useFormik } from "formik";
-import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import styles from "./Login.module.scss";
-// import { config } from "../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Slide, Zoom, Flip, Bounce } from "react-toastify";
 import { login, loginUser } from "../api/ChatRequest";
-import { UserContext } from "../UseContext";
 function Login() {
   const navigate = useNavigate();
-
-  // const { 
-  //   setLoginUser,
-  //   setOverAllCondition
-
-  // } =
-  //   useContext(UserContext);
 
   const formik = useFormik({
     initialValues: {
@@ -54,15 +43,8 @@ function Login() {
         setButtonLoading(true);
 
         const createAcc = await login(values);
-console.log(createAcc)
         if (createAcc.data.message === "Login Successfully") {
           localStorage.setItem("ticket", createAcc.data.otherDetails._id);
-          // localStorage.setItem("loadkey", "loading");
-          // setOverAllCondition("finded")
-          // localStorage.setItem("key", "finded");
-
-        // setLoginUser(createAcc.data.otherDetails)
-
 
           toast.success(createAcc.data.message, {
             position: "top-right",
@@ -80,8 +62,9 @@ console.log(createAcc)
           setTimeout(() => navigate("/home"), 5000);
 
           formik.resetForm();
-        }else if (createAcc.data.message === "Username or Password incorrect" ||
-        "User does not exists"
+        } else if (
+          createAcc.data.message === "Username or Password incorrect" ||
+          "User does not exists"
         ) {
           toast.error(createAcc.data.message, {
             position: "top-right",
@@ -95,9 +78,7 @@ console.log(createAcc)
           });
           setButtonLoading(false);
         }
-      } catch (error) {
-        // alert("error");
-      }
+      } catch (error) {}
     },
   });
   const [passwordDispaly, setPasswordDisplay] = useState("Show");
@@ -117,21 +98,18 @@ console.log(createAcc)
 
   return (
     <>
-      <div className='inputbg'>
-        <form className='inputform' >
-          <h3>
-        Log In
-          </h3>
-          <div className="Inputpair" >
+      <div className="inputbg">
+        <form className="inputform">
+          <h3>Log In</h3>
+          <div className="Inputpair">
             <input
-            className='Input'
+              className="Input"
               type="username"
               placeholder="Email"
               name="username"
               value={formik.values.username}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              
               id={`
 							${formik.touched.username && formik.errors.username ? "error-box" : ""}
 							${formik.touched.username && !formik.errors.username ? "success-box" : ""}
@@ -143,9 +121,9 @@ console.log(createAcc)
             ) : null}
           </div>
 
-          <div className="Inputpair" >
+          <div className="Inputpair">
             <div
-              className='Input' 
+              className="Input"
               id={`
 							${formik.touched.password && formik.errors.password ? "error-box" : ""}
 							${formik.touched.password && !formik.errors.password ? "success-box" : ""}
@@ -153,55 +131,36 @@ console.log(createAcc)
 							`}
             >
               <input
-              className="InputPassword"
+                className="InputPassword"
                 type={passwordType}
                 placeholder="Password"
                 name="password"
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                
               />
-              <span className="InputPasswordSpan" onClick={changeType} >
+              <span className="InputPasswordSpan" onClick={changeType}>
                 {passwordDispaly}
               </span>
             </div>
             {formik.touched.password && formik.errors.password ? (
-              <span className="err" >
-                {formik.errors.password}{" "}
-              </span>
+              <span className="err">{formik.errors.password} </span>
             ) : null}
           </div>
-          <Link className="forlinks InputLink" to="signup" >
-        Don't have an account Sign up!
-        </Link>
+          <Link className="forlinks InputLink" to="signup">
+            Don't have an account Sign up!
+          </Link>
           <button
             onClick={formik.handleSubmit}
             type="submit"
             className="button InputButton"
           >
-            {buttonLoading ? (
-             "Login"
-            ) : (
-              "Login"
-            )}
+            {buttonLoading ? "Login" : "Login"}
           </button>
 
-          {/* <div >
-            <Link to="/layout/forgotpassword" >
-              Forgot password
-            </Link>
-            <Link to="/layout/changepassword" >
-              Change password
-            </Link>
-          </div> */}
-          <div >
-        {/* <h5>Are you New Admin ?</h5> */}
-       
-      </div>
+          <div></div>
         </form>
       </div>
-      
 
       <ToastContainer
         transition={Bounce}

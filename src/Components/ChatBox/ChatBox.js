@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { addMesage, getMessages, getUser } from '../../api/ChatRequest'
-import Profile from '../../img/profileImg.jpg'
 import dpic from '../../img/dprofile.png'
 
 import {format} from "timeago.js"
@@ -8,15 +7,17 @@ import InputEmoji from "react-input-emoji"
 import "./ChatBox.css";
 
 
-const ChatBox = ({chat,currentUser,setSendMessage,recieveMessage,tryId,tryBoolean}) => {
+const ChatBox = ({chat,currentUser,setSendMessage,recieveMessage,
+  // tryId,tryBoolean
+}) => {
 // const[currentChat,setCurrentChat]=useState(null)
-console.log(tryId)
-console.log(chat)
-console.log(tryBoolean)
+// console.log(tryId)
+// console.log(chat)
+// console.log(tryBoolean)
 
 
 // const [loading]
-console.log(recieveMessage)
+// console.log(recieveMessage)
 const [userData, setUserData] = useState(null);
 const[messages,setMessages] =useState([])
 const[newMessage,setNewMessage] =useState("")
@@ -48,7 +49,7 @@ useEffect(()=>{
       try{
           const {data}=await getMessages(chat._id)
           setMessages(data)
-          console.log(data)
+          // console.log(data)
 
       }catch (error) {
           console.log(error)
@@ -56,7 +57,7 @@ useEffect(()=>{
   }
   if(chat!==null)fetchMessage()
 
-},[chat])
+},[chat,recieveMessage])
 
 const fetchMessageAgain = async()=>{
   try{
@@ -101,9 +102,13 @@ try {
 
 
 useEffect(()=>{
-// if(recieveMessage !== null && recieveMessage.chatId ===(chat._id || tryId)){
+if(recieveMessage !== null
+  //  && recieveMessage.chatId ===(chat._id 
+  // || tryId
+  // )
+  ){
 
-if(recieveMessage !== null && recieveMessage.chatId === tryId){
+// if(recieveMessage !== null && recieveMessage.chatId === tryId){
   setMessages([...messages,recieveMessage])
 }
 },[recieveMessage])
@@ -126,7 +131,7 @@ if(recieveMessage !== null && recieveMessage.chatId === tryId){
 <>
 <div className='ChatBox-container'>
     {chat 
-    || tryBoolean
+    // || tryBoolean
     ?(
   <>
   <div className='chat-header'>

@@ -1,59 +1,40 @@
-
-
-.ProfileSide{
-display: flex;
-/* flex: 1;. */
-flex-direction: column;
-/* display: grid; */
-/* grid-template-rows: 2fr 2fr; */
-gap: 0.5rem;
-align-items: center;
-/* overflow: auto; */
-/* background-color: black; */
-padding-bottom: 1rem;
-height: 85vh;
-overflow: hidden !important;
-overflow-y: scroll !important;
-/* ::-webkit-scrollb */
-
+.ProfileSide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  height: 85vh;
+  overflow: hidden !important;
+  overflow-y: scroll !important;
 }
-.ProfileSide::-webkit-scrollbar{
-  display:block !important;
+.ProfileSide::-webkit-scrollbar {
+  display: block !important;
 }
 ::-webkit-scrollbar {
-    width: 0.3vw;
-    /* height: 2rem; */
-    /* margin: 1rem; */
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background:  rgb(255, 177, 194); 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    /* background: #fd507e;  */
-    background:  rgb(255, 177, 194,0.9); 
+  width: 0.3vw;
+}
 
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 177, 194);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 177, 194, 0.9);
+}
 
 @media only screen and (max-width: 600px) {
-  .ProfileSide{
+  .ProfileSide {
     height: 70vh;
   }
   ::-webkit-scrollbar {
- width: 0.8vw;
+    width: 0.8vw;
   }
   ::-webkit-scrollbar-thumb {
-    background:  rgb(255, 177, 194,0.8); 
+    background: rgb(255, 177, 194, 0.8);
   }
 }
-  
-  
-  
