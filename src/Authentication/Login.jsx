@@ -150,6 +150,14 @@ function Login() {
           <Link className="forlinks InputLink" to="signup">
             Don't have an account Sign up!
           </Link>
+          
+          <div className="fordisplayid">
+            <p><span>Email Id : </span>person1@gmail.com</p>
+            {/* <p><span>Person 2 : </span>person2@gmail.com</p>             */}
+            </div>
+            <div className="fordisplayid">
+              <p><span>Password : </span>12345678</p>
+            </div>
           <button
             onClick={formik.handleSubmit}
             type="submit"
@@ -158,7 +166,6 @@ function Login() {
             {buttonLoading ? "Login" : "Login"}
           </button>
 
-          <div></div>
         </form>
       </div>
 

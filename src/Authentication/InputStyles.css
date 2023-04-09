@@ -77,6 +77,20 @@
   aspect-ratio: 5/3;
   object-fit: cover;
 }
+.fordisplayid{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* flex-direction: column; */
+  gap: 1.5vw;
+  font-size: 0.8vw;
+  color: var(--buttonBg);
+  font-weight: 600;
+}
+.fordisplayid>p>span{
+  font-weight: bolder;
+}
+
 
 @media only screen and (max-width: 600px) {
   .inputbg {
@@ -122,4 +136,7 @@
     width: 32vw;
     aspect-ratio: 5/3;
   }
+.fordisplayid{
+font-size: 2vw;
+}
 }
